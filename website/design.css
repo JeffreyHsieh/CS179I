@@ -1,0 +1,31 @@
+/* Color Theme: Pastel Green (#8DDF73) */
+
+.menu{
+  margin: 0;
+  overflow: hidden;
+}
+
+.menu ul li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu ul li a{
+  font-family: 'Open Sans', sans-serif, Arial;
+}
+
+
+.main-title{
+  font-family: 'Open Sans', sans-serif, Arial;
+}
+
+.main-display{
+
+}
+
+.footer{
+  font-family: 'Open Sans', sans-serif, Arial;
+}
+
+
