@@ -2,7 +2,9 @@
 
 .menu{
   margin: 0;
+  height: 100%;
   overflow: hidden;
+  z-index: 1;
 }
 
 .menu ul li{
@@ -21,11 +23,15 @@
 }
 
 .main-display{
-
+  border: 1px solid #E0E0E0;
+  width: 40%;
+  height: 25%;
 }
 
 .footer{
   font-family: 'Open Sans', sans-serif, Arial;
+  background-color: #8DDF73;
+  width: 100%;
 }
 
 
