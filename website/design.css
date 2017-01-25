@@ -1,13 +1,17 @@
 /* Color Theme: Pastel Green (#8DDF73) */
 
 .menu{
+  border-right: 1px solider #E0E0E0;
+  box-shadow: 0px 0px 4px 0px #E7E7E7;
   margin: 0;
+  width: 30%;
   height: 100%;
   overflow: hidden;
   z-index: 1;
 }
 
 .menu ul li{
+  display: block;
   margin: 0;
   padding: 0;
   list-style: none;
