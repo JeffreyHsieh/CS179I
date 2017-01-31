@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour {
+	public float speed;
+	private Rigidbody body;
 
-	// Use this for initialization
 	void Start () {
-		
+		body = GetComponent<Rigidbody> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void FixedUpdate () {
+		float moveX = Input.GetAxis ("Horizontal");
+		float moveY = Input.GetAxis ("Vertical");
+		Vector3 movement = new Vector3 (moveX, 0.0f, moveY);
+		body.AddForce (movement * speed);
 	}
 }
