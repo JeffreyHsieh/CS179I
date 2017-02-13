@@ -1,8 +1,8 @@
 <?php
-	$servername = "localhost";
+	$servername = "10.25.23.143";
 	$server_username = "root";
 	$server_password = "oaGj90P5O8NO0Nkv";
-	$dbName = "social vr";
+	$dbName = "social_vr";
 
 	$username = $_POST["username_post"];
 	$password = $_POST["password_post"];
