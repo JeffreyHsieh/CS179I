@@ -7,7 +7,10 @@ public class test_player_controller : NetworkBehaviour {    //NetworkBehaviour f
 
 	// Use this for initialization
 	void Start () {
-		
+        /*
+        GameObject camera = GameObject.Find("MainCamera");
+        camera.transform.parent = this.transform;
+        */
 	}
 	
 	// Update is called once per frame
@@ -19,11 +22,13 @@ public class test_player_controller : NetworkBehaviour {    //NetworkBehaviour f
             return;
         }
 
+        
         //this grabs arrow key inputs and moves by frame which is why we multiply by delta time and by the speed of how fast we want them to turn.
         float x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         float z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
+        
 	}
 }
