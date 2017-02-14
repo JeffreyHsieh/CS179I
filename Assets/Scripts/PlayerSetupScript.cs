@@ -19,23 +19,26 @@ public class PlayerSetupScript : NetworkBehaviour {
         }
         else
         {
-            /*
+            
             sceneCamera = Camera.main;
             if(sceneCamera != null)
             {
-                sceneCamera.gameObject.SetActive(false);
+                sceneCamera.gameObject.GetComponent<Camera>().enabled = false;
+                sceneCamera.gameObject.GetComponent<AudioListener>().enabled = false;
+
             }
-            Camera.main.gameObject.SetActive(false);
-            */
+            //Camera.main.gameObject.SetActive(false);
+            
         }
     }
-    /*
+    
     void OnDisable()
     {
         if(sceneCamera != null)
         {
-            sceneCamera.gameObject.SetActive(true);
+            sceneCamera.gameObject.GetComponent<Camera>().enabled = true;
+            sceneCamera.gameObject.GetComponent<AudioListener>().enabled = true;
         }
     }
-    */
+    
 }
