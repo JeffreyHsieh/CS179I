@@ -16,7 +16,7 @@ public class ChatSystem : MonoBehaviour {
         {
             if (!string.IsNullOrEmpty(currenMessage.Trim()))
             {
-                networkView.RPC("ChatMessage", RPCMode.AllBuffered, new object[] { currenMessage });
+                //networkView.RPC("ChatMessage", RPCMode.AllBuffered, new object[] { currenMessage });
                 currenMessage = string.Empty;
             }
         }
