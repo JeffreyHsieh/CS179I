@@ -16,7 +16,7 @@ public class Login : MonoBehaviour {
 
     private string db_login;
 
-    private string URL = "http:/10.25.20.64/social_vr/LoginData.php?username_post=";
+    private string URL = "http://10.25.119.15/social_vr/LoginData.php?username_post=";
 
     // Use this for initialization
     public void Start()

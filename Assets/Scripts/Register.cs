@@ -12,7 +12,7 @@ public class Register : MonoBehaviour {
     private string USERNAME;
     private string PASSWORD;
     private string CONFIRM_PASSWORD;
-    private string URL = "http://10.25.20.64/social_vr/insertUser.php";
+    private string URL = "http://10.25.119.15/social_vr/insertUser.php";
 
     private bool valid_user = false;
     private bool valid_pass = false;
