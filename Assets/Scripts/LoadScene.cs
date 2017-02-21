@@ -4,7 +4,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class LoadScene : MonoBehaviour {
-    public void LoadByIndex(int index)
+    public string index;
+
+    public void LoadByIndex()
     {
         SceneManager.LoadScene(index);
     }

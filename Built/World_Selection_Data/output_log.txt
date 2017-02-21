@@ -1,32 +1,38 @@
-Initialize engine version: 5.5.1f1 (88d00a7498cd)
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
-    Vendor:   Intel
-    VRAM:     848 MB
-    Driver:   9.17.10.2828
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   20.19.15.4549
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.039 seconds
-Platform assembly: C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\HelloJuly\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.026 seconds
+Platform assembly: C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\John\Documents\GitHub\CS179I\Built\World_Selection_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
-XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
-desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initialized touch support.
-UnloadTime: 1.289219 ms
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 3ec0 -> priority: 1 
+UnloadTime: 0.961536 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1138 -> priority: 1 
+  Thread -> id: 11c8 -> priority: 1 
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.914880 ms
+
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 628.
+Total: 0.397568 ms (FindLiveObjects: 0.032000 ms CreateObjectMapping: 0.018432 ms MarkObjects: 0.132608 ms  DeleteObjects: 0.214016 ms)
+
