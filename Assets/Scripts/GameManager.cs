@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour {
                 newWorld.transform.position = new Vector3(0, y, 0);
                 newWorld.transform.SetParent(loadWorldPanel.transform, false);
                 y = y + newWorld.GetComponent<RectTransform>().rect.height + 10;
-                
             }
         }
         else
