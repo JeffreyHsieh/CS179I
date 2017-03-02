@@ -30,29 +30,67 @@ except socket.error, error_message:
 print socket.gethostbyname(socket.gethostname())
 
 # Listening on server socket
-server_socket.listen(3)
+server_socket.listen(5)
 
 # Functions
 def photo():
     #connection.send('hello photo');
-    image_list = os.listdir('C:\Users\Claire\Downloads')
+    image_list = os.listdir('C:\Users\John Li\Pictures\Test')
+    for file in image_list:
+        print file
     image_request = [img for img in image_list if img.endswith('.png')]
+
     #for i in image_request:
     #connection.send(ima_request[0])
     file_n = open(image_request[0], 'rb').read()
+
+    #file_w = open("blank.txt", "w")
+    #file_w.write(file_n)
+
     #s = file_n.readline(512)
+    connection.send(".png")
+
     connection.send(file_n)
     print image_request[0]
     file_n.close()
-    
+    file_w.close()
+
+def music():
+        #connection.send('hello photo');
+    video_list = os.listdir('C:\Users\John Li\Pictures\Test')
+    for file in video_list:
+        print file
+    video_request = [vid for vid in video_list if vid.endswith('.mp3')]
+
+    connection.send(".mp3")
+
+    #for i in image_request:
+    #connection.send(ima_request[0])
+    file_n = open(video_request[0], 'rb').read()
+
+    connection.send(file_n)
+    file_n.close()
 
 def video():
-    connection.send('hello video');
-    
+        #connection.send('hello photo');
+    video_list = os.listdir('C:\Users\John Li\Pictures\Test')
+    for file in video_list:
+        print file
+    video_request = [vid for vid in video_list if vid.endswith('.wmv')]
+
+    connection.send(".wmv")
+
+    #for i in image_request:
+    #connection.send(ima_request[0])
+    file_n = open(video_request[0], 'rb').read()
+
+    connection.send(file_n)
+    file_n.close()
     
 # List of services
 service = {
     'photo' : photo,
+    'music' : music,
     'video' : video,
 }
 
