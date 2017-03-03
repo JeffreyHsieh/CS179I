@@ -1,11 +1,11 @@
 <?php
-    $host = "10.25.2.107";
+    $host = "10.25.64.238";
     $port = 7777;
 
     $client_socket = socket_create(AF_INET, SOCK_STREAM,0) or die("Could not create socket\n");
     socket_connect ($client_socket , $host, $port);
 
-    $in = "video";
+    $in = "music";
 
     socket_write($client_socket, $in, strlen($in));
 
@@ -15,10 +15,9 @@
     echo $ext;
     socket_recv($client_socket, $buffer, 13421776, 0);
 
-    echo "after recv";
-    $myfile = fopen("test.txt", "w");
-    fwrite($myfile,$buffer);
-    $imageData = null
+    #$myfile = fopen("test.txt", "w");
+    #fwrite($myfile,$buffer);
+    $imageData = null;
     switch ($ext){
         case ".png":
         case ".jpeg":
@@ -30,7 +29,6 @@
         default:
             $imageData = $buffer;
             $img = "<img src= 'data:image/".$ext.";base64, $imgData'>";
-            break;
     }
     
 
