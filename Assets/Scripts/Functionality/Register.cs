@@ -12,8 +12,7 @@ public class Register : MonoBehaviour {
     private string USERNAME;
     private string PASSWORD;
     private string CONFIRM_PASSWORD;
-    public string ip_address;
-    private string URL = "/social_vr/insertUser.php";
+    private string URL = "http://10.25.119.15/social_vr/insertUser.php";
 
     private bool valid_user = false;
     private bool valid_pass = false;
@@ -24,7 +23,7 @@ public class Register : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	    	URL = "http://"+ip_address+URL;
+	    	
 	}
 	
     public void create_user(string username, string password)
