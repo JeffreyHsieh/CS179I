@@ -15,13 +15,13 @@ public class Login : MonoBehaviour {
     private string PASSWORD;
 
     private string db_login;
-
-    private string URL = "http://10.25.20.188/social_vr/LoginData.php?username_post=";
+    public string ip_address;
+    private string URL = "/social_vr/LoginData.php?username_post=";
 
     // Use this for initialization
     public void Start()
     {
-
+        URL = "http://"+ip_address+URL;
 
     }
 
