@@ -7,9 +7,9 @@ using System.IO;
 
 public class recv_data : MonoBehaviour {
 
-	public static string option = "";
+	public string option = "";
 	public string ip_address;
-	private string URL = "/social_vr/client.php?option_post="+option;
+	private string URL = "/social_vr/client.php?option_post=";
 	
 	//public Texture image;
 	public string file_path; 
@@ -17,7 +17,7 @@ public class recv_data : MonoBehaviour {
 
     // Use this for initialization
 	void Start(){
-		URL = "http://"+ip_address+URL;
+		URL = "http://"+ip_address+URL+option;
 		file_path = @"C:\Users\domop_000\Pictures\Game\FancyCat.jpg";
 		load_from_file();
 	}
@@ -37,7 +37,12 @@ public class recv_data : MonoBehaviour {
         Texture2D tex;
         tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
         WWW www = new WWW(URL+option);
-        yield return www;
+        while (www.isDone == false) {
+            //if(progressGUI !=null) progressGUI.text = "Progresso do video: " + (int)(100.0f * www.progress) + "%";
+            Debug.Log("Image: Loading");
+            yield return 0;
+        }
+        //yield return www;
         www.LoadImageIntoTexture(tex);
         GetComponent<Renderer>().material.mainTexture = tex;
     }
