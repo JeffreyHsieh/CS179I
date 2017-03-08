@@ -1,5 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using System;
+using System.IO;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -27,6 +30,22 @@ public class GameManager : MonoBehaviour {
                 newWorld.transform.position = new Vector3(0, y, 0);
                 newWorld.transform.SetParent(loadWorldPanel.transform, false);
                 y = y + newWorld.GetComponent<RectTransform>().rect.height + 10;
+
+                Image newWorldImage = newWorld.GetComponent<Image>();
+
+                string filePath = @"C:\Users\Claire\Documents\Github\CS179I\Assets\Screenshots\Hello_World.png";
+                byte[] bytes = File.ReadAllBytes(filePath);
+                Sprite newWorldSprite = Resources.Load("hello/hello") as Sprite;
+
+                if (newWorldSprite)
+                {
+                }
+                else
+                {
+                    Debug.Log("no image found");
+                }
+
+                newWorldImage.sprite = newWorldSprite;
             }
         }
         else
@@ -36,8 +55,12 @@ public class GameManager : MonoBehaviour {
     }
 
 	void Start () {
-		// Set initial state to movement.
-		player = CharacterState.Move;
+        // Set initial state to movement.
+        //player = CharacterState.Move;
+        Scene scene = SceneManager.GetActiveScene();
+        Debug.Log(scene.name);
+        Application.CaptureScreenshot("Assets/Screenshots/" + scene.name + ".png");
+
 	}
 
 	void Update () {
