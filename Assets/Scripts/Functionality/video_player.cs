@@ -16,7 +16,8 @@ public class video_player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(WWW_load_video());
+        //File_load_video();
+        StartCoroutine(WWW_load_video(url));
         //GetComponent<Renderer>().material= video as MovieTexture;
         /*
         video = ((MovieTexture)GetComponent<Renderer>().material.mainTexture);//.Play();
@@ -36,27 +37,33 @@ public class video_player : MonoBehaviour {
      
     }
 	
-    IEnumerator WWW_load_video(){
+    void File_load_video(){
+        string URL = @"file:///"+url;
+        StartCoroutine(WWW_load_video(URL));
+    }
 
+    IEnumerator WWW_load_video(string URL){
         //if(targetRender ==null) targetRender = GetComponent<MeshRenderer> ();
        // if(audio ==null) 
         //url = "http://www.unity3d.com/Movie/sample.ogg";
-        url = @url;
-        Debug.Log("URL = "+url);
-        WWW www = new WWW (url);
+        //url = +url
+        
+        Debug.Log("URL = "+URL);
+        WWW www = new WWW (URL);
         yield return www;
         
         Debug.Log("Video downloaded");
         if(www.movie == null)
-            Debug.Log("It was a lie");
+            Debug.Log("Movie is null");
         video = www.movie;
         
-        if(video.isReadyToPlay)
-            Debug.Log("Video is ready");
+        
         while (!video.isReadyToPlay) {
             yield return null;
             Debug.Log("Loading");
         }
+        if(video.isReadyToPlay)
+            Debug.Log("Video is ready");
 
         GetComponent<MeshRenderer>().material.mainTexture = video;
         audio = GetComponent<AudioSource>();
@@ -64,7 +71,8 @@ public class video_player : MonoBehaviour {
         if(video.audioClip == null){
             Debug.Log("null");
         }
-        
+        //if(video.clip == null)
+          //  Debug.Log("Clip is null");
         audio.clip = video.audioClip;
         audio.Play ();
         video.Play ();
@@ -88,8 +96,9 @@ public class video_player : MonoBehaviour {
             video.Play();
         }
 
-        else if(Input.GetKeyDown(KeyCode.Z)){
-            StartCoroutine(WWW_load_video());
+        else if(Input.GetKeyDown(KeyCode.Space)){
+            //StartCoroutine(WWW_load_video(url));
+            
         }
     }
 
