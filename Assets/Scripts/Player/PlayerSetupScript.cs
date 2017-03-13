@@ -33,7 +33,7 @@ public class PlayerSetupScript : NetworkBehaviour {
             //Camera.main.gameObject.SetActive(false);
         }
     
-    
+    }
     void OnDisable()
     {
         if(sceneCamera != null)
@@ -44,3 +44,4 @@ public class PlayerSetupScript : NetworkBehaviour {
     }
     
 }
+
