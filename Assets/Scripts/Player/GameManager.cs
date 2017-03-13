@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	public CharacterState player;
     public Button worldButton;
     public string[] worlds;
+    private LoadScene loadscene;
     private GameObject loadWorldPanel;
 
 
@@ -31,14 +32,24 @@ public class GameManager : MonoBehaviour {
                 newWorld.transform.SetParent(loadWorldPanel.transform, false);
                 y = y + newWorld.GetComponent<RectTransform>().rect.height + 10;
 
+                loadscene = newWorld.GetComponent<LoadScene>();
+                if (loadscene)
+                {
+                    loadscene.index = worlds[i];
+                    Debug.Log(loadscene.index);
+                }
+                
+
+                /*
                 Image newWorldImage = newWorld.GetComponent<Image>();
 
                 string filePath = @"C:\Users\Narvik\Documents\GitHub\CS179I\Assets\Screenshots";
                 byte[] bytes = File.ReadAllBytes(filePath);
-                Sprite newWorldSprite = Resources.Load("hello/hello") as Sprite;
+                Sprite newWorldSprite = Resources.Load("Screenshots/hello") as Sprite;
 
                 if (newWorldSprite)
                 {
+                    Debug.Log("Image found");
                 }
                 else
                 {
@@ -46,6 +57,7 @@ public class GameManager : MonoBehaviour {
                 }
 
                 newWorldImage.sprite = newWorldSprite;
+                */
             }
         }
         else
@@ -55,8 +67,6 @@ public class GameManager : MonoBehaviour {
     }
 
 	void Start () {
-        // Set initial state to movement.
-        //player = CharacterState.Move;
         Scene scene = SceneManager.GetActiveScene();
         Debug.Log(scene.name);
         Application.CaptureScreenshot("Assets/Screenshots/" + scene.name + ".png");
@@ -64,24 +74,5 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Update () {
-        /*
-		switch(player){
-		case CharacterState.Move:
-			// If the player initiates interaction UI, switch to interact state.
-			if(Input.GetButtonDown("Space")){
-				player = CharacterState.Interact;
-			}
-			break;
-		case CharacterState.Interact:
-			// If the player terminates interaction UI, switch to move state.
-			if(Input.GetButtonDown("Space")){
-				player = CharacterState.Move;
-			}
-			break;
-		default:
-			player = CharacterState.Move;
-			break;
-		}
-        */
 	}
 }

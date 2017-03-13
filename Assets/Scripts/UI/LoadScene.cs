@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class LoadScene : MonoBehaviour {
@@ -9,5 +10,12 @@ public class LoadScene : MonoBehaviour {
     public void LoadByIndex()
     {
         SceneManager.LoadScene(index);
+
+    }
+
+    void Start()
+    {
+        Button b = GetComponent<Button>();
+        b.onClick.AddListener(LoadByIndex);
     }
 }
