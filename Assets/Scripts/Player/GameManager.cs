@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour {
                 if (loadscene)
                 {
                     loadscene.index = worlds[i];
-                    Debug.Log(loadscene.index);
                 }
                 
 
@@ -69,7 +68,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         Scene scene = SceneManager.GetActiveScene();
         Debug.Log(scene.name);
-        Application.CaptureScreenshot("Assets/Screenshots/" + scene.name + ".png");
+        Application.CaptureScreenshot("Assets/Resources/" + scene.name.ToLower() + ".png");
 
 	}
 

@@ -17,5 +17,7 @@ public class LoadScene : MonoBehaviour {
     {
         Button b = GetComponent<Button>();
         b.onClick.AddListener(LoadByIndex);
+        b.GetComponent<Image>().sprite = Resources.Load<Sprite>(index.ToLower());
+
     }
 }
