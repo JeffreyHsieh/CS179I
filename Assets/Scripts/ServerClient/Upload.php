@@ -1,5 +1,5 @@
 <?php
-    $host = "169.235.104.126";
+    $host = "10.25.20.124";
     $port = 7777;
 
     $client_socket = socket_create(AF_INET, SOCK_STREAM,0) or die("Could not create socket\n");
@@ -10,15 +10,37 @@
     socket_write($client_socket, $in, strlen($in));
     #an associative array  of items uploaded to the curent script using the HTTP POST method
     #check if there is a chosen file on the sumbitted form
-   if(isset($_FILES['file']))
-   {
+    if(isset($_FILES['file']) )
+    {
+      if(isset($_POST['_chunkNumber']))
+      {
+          $current_chunk_number = $_REQUEST['_chunkNumber'];
+          $chunk_size = $_REQUEST['_chunkSize'];
+          $total_size = $_REQUEST['_totalSize'];
 
+          $total_chunk_number = ceil($total_size / $chunk_size);
+          move_uploaded_file($_FILES['file']['tmp_name'], $upload_folder . $uid . '.part' . $current_chunk_number);
 
-   move_uploaded_file($_FILES['file']['tmp_name'], "../uploads/" . $_FILES['file']['name']);
+          if ($current_chunk_number == ($total_chunk_number - 1)) 
+          {
+             for($i = 0; $i < $total_chunk_number; $i++)
+             {
+                $content = file_get_contents($upload_folder . $uid . '.part' . $i);
+                file_put_contents($upload_folder . $filename, $content, FILE_APPEND);
+                unlink($upload_folder . $uid . '.part' . $i);
+             }
+          }
+      }
+      else
+      {
+         move_uploaded_file($_FILES['file']['tmp_name'], "./images/" . $_FILES['file']['name']);
+      }
+    }
+    else
+    {
+        print("Failed!");
+    }
 
-   } else
-   {
-      print("Failed!");
-   }
+  
 ?>
    
