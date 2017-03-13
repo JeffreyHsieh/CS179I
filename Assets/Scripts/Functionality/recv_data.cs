@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using System.IO;
-using SFB;
 
 public class recv_data : MonoBehaviour {
 

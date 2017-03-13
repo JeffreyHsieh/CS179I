@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour {
 
                 Image newWorldImage = newWorld.GetComponent<Image>();
 
-                string filePath = @"C:\Users\Claire\Documents\Github\CS179I\Assets\Screenshots\Hello_World.png";
+                string filePath = @"C:\Users\Narvik\Documents\GitHub\CS179I\Assets\Screenshots";
                 byte[] bytes = File.ReadAllBytes(filePath);
                 Sprite newWorldSprite = Resources.Load("hello/hello") as Sprite;
 
