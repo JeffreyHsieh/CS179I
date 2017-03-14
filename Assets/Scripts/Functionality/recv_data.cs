@@ -21,7 +21,10 @@ public class recv_data : MonoBehaviour {
         //onGUI();
 		URL = "http://"+ip_address+URL+option;
 		file_path = @"C:\Users\domop_000\Pictures\Game\FancyCat.jpg";
-		load_from_file(file_path);
+		if(file_path == null){
+            load_from_file(file_path);
+        }
+        
 	}
 
 	
@@ -35,9 +38,17 @@ public class recv_data : MonoBehaviour {
     }
 
     public void load_from_explorer(){
-        
+        UniFileBrowserExample script =gameObject.GetComponent<UniFileBrowserExample>();
+        script.ShowThisGUI = true;
+        Debug.Log("mesage = '"+script.message+"'");
+
+ 
     }
 
+    public void start_photo(){
+        StartCoroutine(update_photo());
+    }
+    
     IEnumerator update_photo() {
     
         Texture2D tex;
@@ -54,59 +65,17 @@ public class recv_data : MonoBehaviour {
     }
 
     void Update(){
+        /*
     	if(Input.GetKeyDown(KeyCode.Space)){
     		StartCoroutine(update_photo());
     	}
+        */
         if(Input.GetKeyDown(KeyCode.B)){
             //onGUI();
-            //load_from_file(explorer_path);
+            //load_from_file(file_path);
+            load_from_explorer();
         }
     }
-
-    //-----------------------------------------Ruyun Functions below
-    /*
-    void onGUI() {
-        var guiScale = new Vector3(Screen.width / 640.0f, Screen.height / 480.0f, 1.0f);
-        Matrix4x4.TRS(Vector3.zero, Quaternion.identity, guiScale);
-
-        GUILayout.Space(20);
-        GUILayout.BeginHorizontal();
-        GUILayout.Space(20);
-        GUILayout.BeginVertical();
-
-        GUILayout.Space(5);
-        if (GUILayout.Button("Open File Filter")) {
-            var extensions = new [] {
-                new ExtensionFilter("Image Files", "png", "jpg", "jpeg" ),
-                new ExtensionFilter("Sound Files", "mp3", "wav" ),
-                new ExtensionFilter("Video Files", "mp4", "ogg" ),
-                new ExtensionFilter("All Files", "*" ),
-            };
-            WriteResult(StandaloneFileBrowser.OpenFilePanel("Open File", "", extensions, true));
-        }
-
-        GUILayout.Space(15);
-
-        GUILayout.Space(15);
-
-
-        GUILayout.EndVertical();
-        GUILayout.Space(20);
-        GUILayout.Label(explorer_path);
-        GUILayout.EndHorizontal();
-    }
-
-    private void WriteResult(string[] paths) {
-        if (paths.Length == 0) {
-            return;
-        }
-
-        explorer_path = "";
-        foreach (var p in paths) {
-            explorer_path += p + "\n";
-        }
-    }*/
-    
 	
 }
 

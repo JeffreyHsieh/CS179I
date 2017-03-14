@@ -17,7 +17,9 @@ public class video_player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //File_load_video();
-        StartCoroutine(WWW_load_video(url));
+
+        //StartCoroutine(WWW_load_video(url));
+
         //GetComponent<Renderer>().material= video as MovieTexture;
         /*
         video = ((MovieTexture)GetComponent<Renderer>().material.mainTexture);//.Play();
@@ -26,6 +28,10 @@ public class video_player : MonoBehaviour {
         audio.Play();*/
 	}
 
+    public void hello(string url){
+
+        StartCoroutine(WWW_load_video(url));
+    }
     void Unity_load_video(){
 
         GetComponent<MeshRenderer>().material.mainTexture = video;
@@ -37,7 +43,7 @@ public class video_player : MonoBehaviour {
      
     }
 	
-    void File_load_video(){
+    public void File_load_video(){
         string URL = @"file:///"+url;
         StartCoroutine(WWW_load_video(URL));
     }
