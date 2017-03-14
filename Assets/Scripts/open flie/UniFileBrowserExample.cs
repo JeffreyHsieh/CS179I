@@ -10,14 +10,14 @@ public class UniFileBrowserExample : MonoBehaviour {
 	float alpha = 1.0f;
 	char pathChar = '/';
 	public bool ShowThisGUI = false;
-    public GameObject picture;
+    //public GameObject picture;
     
 	void Start () {
 		if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer) {
 			pathChar = '\\';
 		}
 
-        picture = GameObject.Find("Picture");
+       // picture = GameObject.Find("Picture");
 
 	}
 
