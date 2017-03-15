@@ -3,8 +3,9 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class UniFileBrowserExample : MonoBehaviour {
+public class UniFileBrowserExample : NetworkBehaviour {
 	
 	public string message;
 	float alpha = 1.0f;
@@ -45,7 +46,7 @@ public class UniFileBrowserExample : MonoBehaviour {
 		}
 		if (GUI.Button (new Rect(100, 300, 95, 35), "Photo")) {
 			recv_data photo_script = gameObject.GetComponent<recv_data>();
-			photo_script.start_photo("10.25.0.175");
+			photo_script.Rpcstart_photo("10.25.0.175");
 
 			Debug.Log("Called");
 		}

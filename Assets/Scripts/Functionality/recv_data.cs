@@ -4,8 +4,9 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.Networking;
 
-public class recv_data : MonoBehaviour {
+public class recv_data : NetworkBehaviour {
 
 	public string option = "";
 	public string ip_address;
@@ -45,8 +46,8 @@ public class recv_data : MonoBehaviour {
 
  
     }
-
-    public void start_photo(string ip){
+    [ClientRpc]
+    public void Rpcstart_photo(string ip){
 
         Debug.Log("uRL: " + URL);
         StartCoroutine(update_photo(ip));
