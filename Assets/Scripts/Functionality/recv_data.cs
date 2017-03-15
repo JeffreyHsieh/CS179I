@@ -9,7 +9,7 @@ public class recv_data : MonoBehaviour {
 
 	public string option = "";
 	public string ip_address;
-	private string URL = "/social_vr/client.php?option_post=";
+	private string URL = "/php_stuff/client.php?option_post=";
 	
 	//public Texture image;
 	public string file_path; 
@@ -19,7 +19,8 @@ public class recv_data : MonoBehaviour {
     // Use this for initialization
 	void Start(){
         //onGUI();
-		URL = "http://"+ip_address+URL+option;
+		//URL = "http://"+ip_address+URL+option;
+        
 		file_path = @"C:\Users\domop_000\Pictures\Game\FancyCat.jpg";
 		if(file_path == null){
             load_from_file(file_path);
@@ -45,12 +46,16 @@ public class recv_data : MonoBehaviour {
  
     }
 
-    public void start_photo(){
-        StartCoroutine(update_photo());
+    public void start_photo(string ip){
+
+        Debug.Log("uRL: " + URL);
+        StartCoroutine(update_photo(ip));
     }
-    
-    IEnumerator update_photo() {
-    
+
+    IEnumerator update_photo(string ip) {
+
+        URL = "http://"+ip+URL+option;
+        Debug.Log("uRL: " + URL);
         Texture2D tex;
         tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
         WWW www = new WWW(URL);

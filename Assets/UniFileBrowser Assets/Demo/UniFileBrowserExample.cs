@@ -41,12 +41,11 @@ public class UniFileBrowserExample : MonoBehaviour {
 		}
 		if (GUI.Button (new Rect(100, 200, 95, 35), "Video")) {
 			video_player video_script = GameObject.Find("Screen").GetComponent<video_player>();
-			video_script.hello("10.25.0.175/php_stuff/client.php?option=video");
-			Debug.Log("Called");
+			video_script.hello("http://10.25.0.175/php_stuff/client.php?option=video");
 		}
 		if (GUI.Button (new Rect(100, 300, 95, 35), "Photo")) {
 			recv_data photo_script = gameObject.GetComponent<recv_data>();
-			photo_script.start_photo();
+			photo_script.start_photo("10.25.0.175");
 
 			Debug.Log("Called");
 		}
