@@ -4,9 +4,8 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using System.IO;
-using UnityEngine.Networking;
 
-public class recv_data : NetworkBehaviour {
+public class recv_data : MonoBehaviour {
 
 	public string option = "";
 	public string ip_address;
@@ -46,8 +45,8 @@ public class recv_data : NetworkBehaviour {
 
  
     }
-    [ClientRpc]
-    public void Rpcstart_photo(string ip){
+    [RPC]
+    public void start_photo(string ip){
 
         Debug.Log("uRL: " + URL);
         StartCoroutine(update_photo(ip));
@@ -55,7 +54,7 @@ public class recv_data : NetworkBehaviour {
 
     IEnumerator update_photo(string ip) {
 
-        URL = "http://"+ip+URL+option;
+        URL = "http://"+ip+URL+"photo";
         Debug.Log("uRL: " + URL);
         Texture2D tex;
         tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
